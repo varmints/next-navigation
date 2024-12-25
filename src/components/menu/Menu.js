@@ -47,7 +47,7 @@ const Menu = () => {
               gsap.to(".menu-link-active", {
                 backgroundSize: "100% 30px",
                 duration: 0.3,
-                ease: "power4.inOut",
+                ease: "power1.out",
               })
             },
           },
