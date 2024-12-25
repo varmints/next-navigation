@@ -28,7 +28,7 @@ const Menu = () => {
 
   useGSAP(
     () => {
-      gsap.set(".menu-link-item-holder", { y: 100 });
+      gsap.set(".menu-link-item-holder", { y: 110 });
       tl.current = gsap
         .timeline({ paused: true })
         .to(".menu-overlay", {
