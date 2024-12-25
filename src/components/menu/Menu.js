@@ -30,18 +30,27 @@ const Menu = () => {
 
   useGSAP(
     () => {
-      gsap.set(".menu-link-item-holder", { y: 110 });
+      gsap.set(".menu-link-item-holder", { y: 120 });
       tl.current = gsap
         .timeline({ paused: true })
         .to(".menu-overlay", {
-          duration: 1.23,
+          duration: 1.3,
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
           ease: "power4.inOut",
         })
         .to(".menu-link-item-holder", {
           y: 0,
           duration: 1,
-          stagger: 0.1,
+          stagger: {
+            each: 0.1,
+            onComplete: () => {
+              gsap.to(".menu-link-active", {
+                backgroundSize: "100% 30px",
+                duration: 0.3,
+                ease: "power4.inOut",
+              })
+            },
+          },
           ease: "power4.out",
           delay: -0.75,
         });

@@ -93,7 +93,11 @@
 }
 
 .menu-link-active {
-  text-decoration: line-through;
+  text-decoration: none;
+  background-image: linear-gradient(#fb4545, #fb4545);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 0% 30px;
 }
 
 @media (max-width: 900px) {
@@ -108,6 +112,7 @@
   .menu-link-item-holder a {
     overflow-wrap: break-word;
     font-size: 60px;
+    line-height: 100%;
   }
 
   .menu-info .menu-info-col:last-child {
