@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 
 import "./menu.css";
 
@@ -19,6 +20,7 @@ const menuLinks = [
 const Menu = () => {
   const container = useRef();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const tl = useRef();
 
@@ -85,15 +87,18 @@ const Menu = () => {
         </div>
         <div className="menu-copy">
           <div className="menu-links">
-            {menuLinks.map((link, index) => (
-              <div key={index} className="menu-link-item">
-                <div className="menu-link-item-holder" onClick={toggleMenu}>
-                  <Link className="menu-link" href={link.path}>
-                    {link.label}
-                  </Link>
+            {menuLinks.map((link, index) => {
+              const isActive = pathname === link.path;
+              return (
+                <div key={index} className="menu-link-item">
+                  <div className="menu-link-item-holder" onClick={toggleMenu}>
+                    <Link className={isActive ? 'menu-link-active menu-link' : 'menu-link'} href={link.path}>
+                      {link.label}
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
           <div className="menu-info">
             <div className="menu-info-col">

@@ -92,6 +92,10 @@
   justify-content: flex-end;
 }
 
+.menu-link-active {
+  text-decoration: line-through;
+}
+
 @media (max-width: 900px) {
   .menu-close-icon {
     display: none;
