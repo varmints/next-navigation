@@ -27,7 +27,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   padding: 2em;
   background: #c5fb45;
   z-index: 2;
@@ -64,7 +64,7 @@
 }
 
 .menu-link-item {
-  width: max-content;
+  width: calc(100vw - (2*2rem));
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -101,6 +101,15 @@
   }
 
   .menu-link-item-holder a {
+    overflow-wrap: break-word;
     font-size: 60px;
+  }
+
+  .menu-info .menu-info-col:last-child {
+    align-items: end;
+  }
+
+  .menu-preview {
+    display: none;
   }
 }

@@ -35,12 +35,13 @@ p {
 
 h1 {
   position: absolute;
-  top: 47.5%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5vw;
   font-weight: 400;
   letter-spacing: -0.04em;
+  inline-size: max-content;
   color: #fff;
 }
 
