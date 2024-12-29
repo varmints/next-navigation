@@ -43,11 +43,12 @@ const Menu = () => {
           duration: 1,
           stagger: {
             each: 0.1,
-            onComplete: () => {
+            onStart: () => {
               gsap.to(".menu-link-active", {
                 backgroundSize: "100% 30px",
-                duration: 0.3,
+                duration: 0.4,
                 ease: "power1.out",
+                delay: 0.6,
               })
             },
           },
